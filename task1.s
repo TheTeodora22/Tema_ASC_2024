@@ -15,7 +15,6 @@
     getOutput: .asciz "(%d, %d)\n"
     noSpaceMsg: .asciz "%d: (0, 0)\n"
     nothing: .asciz "(0, 0)\n"
-    debugMsg: .asciz "SUNT AICI %d\n"
     debugMsg2: .asciz "%d "
 
 .text
@@ -350,24 +349,6 @@
         defexit:
             ret
 
-    FAFIS:
-        movl $0, %ebx
-        loop:
-            cmpl $1024, %ebx
-            je fexitafis
-
-            xorl %edx, %edx
-            movb (%edi,%ebx,1), %dl
-            pushl %edx
-            pushl $debugMsg2
-            call printf
-            popl %eax
-            popl %eax
-
-            addl $1, %ebx
-            jmp loop
-        fexitafis:
-            ret
 
 .global main
 main:

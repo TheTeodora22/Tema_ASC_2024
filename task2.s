@@ -24,7 +24,6 @@
     getOutput: .asciz "((%d, %d), (%d, %d))\n"
     noSpaceMsg: .asciz "%d: ((0, 0), (0, 0))\n"
     nothing: .asciz "((0, 0), (0, 0))\n"
-    debugMsg: .asciz "\nSUNT AICI %d\n"
     debugMsg2: .asciz "%d "
     newLine: .asciz "\n"
 
